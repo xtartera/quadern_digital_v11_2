@@ -4,7 +4,7 @@ window.PROJECT = {
   title: "Projecte 23 – LDAP ampliat, validat i preparat per multiusuari",
   subtitle: "Quadern digital interactiu",
   description: "Ampliació del servidor LDAP del Projecte 22 per suportar múltiples usuaris, validar coherència de dades i preparar la integració amb Linux, SSSD i perfils mòbils.",
-  cover: "assets/portades/Portada23.svg",
+  cover: "assets/portades/Portada22.svg",
   logo: "assets/logo.png",
 
   settings: {
