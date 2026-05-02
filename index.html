@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ca">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Plataforma de quaderns digitals</title>
+  <link rel="stylesheet" href="css/pantalla.css">
+  <style>
+    body{min-height:100vh;background:radial-gradient(circle at 18% 12%, rgba(6,182,212,.22), transparent 32%),radial-gradient(circle at 88% 8%, rgba(37,99,235,.18), transparent 34%),linear-gradient(135deg,#f7fbff 0%,#eef7ff 48%,#f8fdff 100%);}
+    .launcher{max-width:1180px;margin:0 auto;padding:42px 22px 70px;}
+    .launcher-hero{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center;margin-bottom:28px;}
+    .launcher-panel{background:linear-gradient(135deg,#0f3768,#0b74b8 58%,#10c7d8);color:#fff;border-radius:34px;padding:34px;box-shadow:0 22px 55px rgba(15,55,104,.22);position:relative;overflow:hidden;}
+    .launcher-panel:after{content:"";position:absolute;inset:auto -80px -120px auto;width:330px;height:330px;border-radius:50%;background:rgba(255,255,255,.16);}
+    .launcher-brand{display:flex;align-items:center;gap:12px;margin-bottom:22px;}
+    .launcher-brand img{width:78px;max-height:54px;object-fit:contain;background:rgba(255,255,255,.92);border-radius:18px;padding:8px;}
+    .launcher-panel h1{font-size:clamp(2.1rem,5vw,4.8rem);line-height:.98;margin:0 0 16px;font-weight:850;letter-spacing:-.045em;}
+    .launcher-panel p{font-size:1.08rem;max-width:680px;color:rgba(255,255,255,.86);margin:0;line-height:1.65;}
+    .launcher-side{background:rgba(255,255,255,.72);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.8);border-radius:30px;padding:26px;box-shadow:0 18px 50px rgba(15,23,42,.08);}
+    .launcher-side h2{margin:0 0 8px;font-size:1.25rem;color:#0f172a;}
+    .launcher-side p{margin:0;color:#64748b;line-height:1.55;}
+    .project-meta{margin-top:18px;display:flex;gap:10px;flex-wrap:wrap;}
+    .project-meta span{padding:8px 12px;border-radius:999px;background:#eaf6ff;color:#075985;font-weight:700;font-size:.85rem;}
+    .selector-head{display:flex;align-items:end;justify-content:space-between;gap:18px;margin:30px 0 16px;}
+    .selector-head h2{font-size:1.7rem;margin:0;color:#0f172a;}
+    #loaderStatus{color:#64748b;font-weight:700;}
+    .project-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(285px,1fr));gap:18px;}
+    .project-card{background:rgba(255,255,255,.86);border:1px solid rgba(226,232,240,.95);border-radius:28px;box-shadow:0 16px 42px rgba(15,23,42,.08);overflow:hidden;cursor:pointer;transition:transform .18s ease, box-shadow .18s ease;border-bottom:4px solid rgba(6,182,212,.28);}
+    .project-card:hover,.project-card:focus{transform:translateY(-4px);box-shadow:0 22px 58px rgba(15,23,42,.13);outline:none;}
+    .project-cover{aspect-ratio:16/9;background:#eaf6ff;padding:12px;}
+    .project-cover img{width:100%;height:100%;object-fit:contain;border-radius:20px;display:block;}
+    .project-info{padding:20px;}
+    .project-tag{display:inline-flex;padding:6px 10px;border-radius:999px;background:#e0f2fe;color:#0369a1;font-size:.78rem;font-weight:850;text-transform:uppercase;letter-spacing:.04em;}
+    .project-info h2{margin:12px 0 8px;font-size:1.18rem;color:#0f172a;line-height:1.2;}
+    .project-info p{margin:0 0 18px;color:#64748b;line-height:1.5;}
+    .project-info button{border:0;border-radius:14px;padding:11px 14px;font-weight:800;background:linear-gradient(135deg,#2563eb,#06b6d4);color:white;box-shadow:0 10px 24px rgba(37,99,235,.18);}
+    .launcher-note{margin-top:26px;color:#64748b;font-size:.92rem;}
+    .launcher-note code{background:#fff;border:1px solid #e2e8f0;border-radius:8px;padding:2px 6px;color:#0f172a;}
+    @media (max-width:780px){.launcher-hero{grid-template-columns:1fr}.launcher{padding:24px 14px 46px}.launcher-panel{padding:26px;border-radius:26px}.selector-head{display:block}.project-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <main class="launcher">
+    <section class="launcher-hero">
+      <div class="launcher-panel">
+        <div class="launcher-brand"><img src="assets/logo.png" alt="Logo del centre"><strong>Quaderns interactius</strong></div>
+        <h1>Selecciona un projecte</h1>
+        <p>Tria el dossier que vols obrir. Cada projecte conserva el seu progrés, identitat, temps de treball i evidències de manera independent al navegador.</p>
+      </div>
+      <aside class="launcher-side">
+        <h2>Motor v11</h2>
+        <p>El motor és reutilitzable. Els projectes es gestionen des del catàleg <code>data/projects.json</code> i cada dossier viu a <code>js/projectes/</code>.</p>
+        <div class="project-meta"><span>PDF A4</span><span>Autodesat</span><span>Integritat</span><span>Temps</span></div>
+      </aside>
+    </section>
+
+    <div class="selector-head">
+      <h2>Projectes disponibles</h2>
+      <div id="loaderStatus">Carregant catàleg…</div>
+    </div>
+    <section id="projectGrid" class="project-grid" aria-live="polite"></section>
+    <p class="launcher-note">Si el catàleg no carrega, obre aquesta carpeta amb <strong>Live Server</strong> o amb <code>python3 -m http.server</code>. El navegador pot bloquejar <code>fetch()</code> quan s’obre amb doble clic.</p>
+  </main>
+  <script src="js/loader.js"></script>
+</body>
+</html>

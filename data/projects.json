@@ -1,0 +1,52 @@
+{
+  "projects": [
+    {
+      "id": "projecteut21-instalacio-linux",
+      "title": "Projecte 21 – Ubuntu Server amb Linux",
+      "description": "Instal·lació d’un servidor Linux amb Ubuntu",
+      "file": "js/projectes/projecteut221.js",
+      "cover": "assets/portades/projecteut221.svg",
+      "tag": "Server"
+    },
+    {
+      "id": "Projecte22-creacio-LDAP-linux-amb-ldif",
+      "title": "Projecte 22 – Creació LDAP Linux",
+      "description": "Creació LDAP Linux amb fitxers .ldif",
+      "file": "js/projectes/Projecte22.js",
+      "cover": "assets/portades/portada22.svg",
+      "tag": "Server"
+    },
+    {
+      "id": "projecte23-ldap-multiusuari-validat",
+      "title": "Projecte 23 – LDAP ampliat, validat i preparat per multiusuari",
+      "description": "Creació LDAP Linux amb fitxers .ldif",
+      "file": "js/projectes/Projecte23.js",
+      "cover": "assets/portades/portada23.svg",
+      "tag": "Server"
+    },
+    {
+      "id": "projecte23b-ldap-lab",
+      "title": "Projecte 24 – Laboratori LDAP (CRUD i troubleshooting)",
+      "description": "Laboratori pràctic per crear, modificar, eliminar i recuperar usuaris LDAP, incloent detecció i resolució d’errors reals.",
+      "file": "js/projectes/Projecte24.js",
+      "cover": "assets/portades/Portada24.svg",
+      "tag": "Server"
+    },
+    {
+      "id": "projecte24-integracio-ldap-linux-sssd",
+      "title": "Projecte 25 – Integració LDAP amb Linux mitjançant SSSD",
+      "description": "Integració d’un servidor LDAP amb un client Ubuntu Desktop 24.04 mitjançant SSSD, NSS i PAM.",
+      "file": "js/projectes/Projecte25.js",
+      "cover": "assets/portades/Portada25.svg",
+      "tag": "Server"
+    },
+    {
+      "id": "projecte26-perfils-mobils-multiusuari",
+      "title": "Projecte 26 – Perfils mòbils multiusuari",
+      "description": "Implementació d’un sistema complet de perfils mòbils multiusuari amb LDAP, SSSD, autofs i NFS, amb persistència, login real i validació multi-client.",
+      "file": "js/projectes/Projecte26.js",
+      "cover": "assets/portades/Portada26.svg",
+      "tag": "Server"
+    }
+  ]
+}
