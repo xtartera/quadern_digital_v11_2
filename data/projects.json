@@ -21,7 +21,7 @@
       "title": "Projecte 23 – LDAP ampliat, validat i preparat per multiusuari",
       "description": "Creació LDAP Linux amb fitxers .ldif",
       "file": "js/projectes/Projecte23.js",
-      "cover": "assets/portades/portada23.svg",
+      "cover": "assets/portades/Portada23.svg",
       "tag": "Server"
     },
     {

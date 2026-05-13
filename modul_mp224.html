@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Plataforma de Mòduls</title>
+  <title>MP224 Sistemes Operatius en Xarxa</title>
   <link rel="stylesheet" href="css/pantalla.css">
   <style>
     .launcher {
@@ -64,12 +64,12 @@
       margin: 0;
       line-height: 1.65;
     }
-    .module-grid {
+    .unit-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(285px, 1fr));
       gap: 18px;
     }
-    .module-card {
+    .unit-card {
       background: rgba(255, 255, 255, .86);
       border: 1px solid rgba(226, 232, 240, .95);
       border-radius: 28px;
@@ -83,34 +83,44 @@
       flex-direction: column;
       justify-content: space-between;
     }
-    .module-card:hover, .module-card:focus {
+    .unit-card:hover, .unit-card:focus {
       transform: translateY(-4px);
       box-shadow: 0 22px 58px rgba(15, 23, 42, .13);
       outline: none;
     }
-    .module-cover {
+    .unit-card .unit-cover {
+      position: relative;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 28px;
+      overflow: hidden;
+      z-index: 1;
       aspect-ratio: 16/9;
       background: #eaf6ff;
       padding: 12px;
-      border-radius: 20px;
-      overflow: hidden;
     }
-    .module-cover img {
+    .unit-card .unit-cover img {
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
       object-fit: contain;
       border-radius: 20px;
+      z-index: 0;
     }
-    .module-info {
+    .unit-info {
       padding: 20px;
     }
-    .module-info h2 {
+    .unit-info h2 {
       margin: 12px 0 8px;
       font-size: 1.18rem;
       color: #0f172a;
       line-height: 1.2;
     }
-    .module-info p {
+    .unit-info p {
       margin: 0 0 18px;
       color: #64748b;
       line-height: 1.5;
@@ -123,14 +133,14 @@
       <div class="launcher-panel">
         <div class="launcher-brand">
           <img src="assets/logo.png" alt="Logo del centre">
-          <strong>Plataforma de Mòduls</strong>
+          <strong>MP224 Sistemes Operatius en Xarxa</strong>
         </div>
-        <h1>Selecciona un mòdul</h1>
-        <p>Tria el mòdul que vols explorar. Cada mòdul conté unitats de treball amb contingut específic.</p>
+        <h1>Selecciona una unitat</h1>
+        <p>Tria la unitat de treball que vols explorar. Cada unitat conté contingut específic per al teu aprenentatge.</p>
       </div>
       <aside class="launcher-side">
         <h2>Motor v11</h2>
-        <p>El motor és reutilitzable. Els mòduls es gestionen des del catàleg <code>data/projects.json</code>.</p>
+        <p>El motor és reutilitzable. Les unitats es gestionen des del catàleg <code>data/projects.json</code>.</p>
         <div class="project-meta">
           <span>PDF A4</span>
           <span>Autodesat</span>
@@ -141,16 +151,43 @@
     </section>
 
     <div class="selector-head">
-      <h2>Mòduls disponibles</h2>
+      <h2>Unitats disponibles</h2>
     </div>
-    <section class="module-grid">
-      <div class="module-card project-card" onclick="window.location.href='modul_mp224.html'">
+    <section class="unit-grid">
+      <div class="unit-card project-card">
         <div class="project-cover">
-          <img src="assets/portades/ldap.svg" alt="Imatge del mòdul MP224">
+          <img src="assets/portades/ldap.svg" alt="Imatge de la Unitat de Treball 1">
         </div>
         <div class="project-info">
-          <h2>MP224 Sistemes Operatius en Xarxa</h2>
-          <p>Explora les unitats de treball relacionades amb els sistemes operatius en xarxa.</p>
+          <h2>Unitat de Treball 1</h2>
+          <p>Introducció als sistemes operatius en xarxa.</p>
+        </div>
+      </div>
+      <div class="unit-card project-card" onclick="window.location.href='unitat_treball2.html'">
+        <div class="project-cover">
+          <img src="assets/portades/ldap.svg" alt="Imatge de la Unitat de Treball 2">
+        </div>
+        <div class="project-info">
+          <h2>Unitat de Treball 2</h2>
+          <p>Configuració bàsica de xarxes.</p>
+        </div>
+      </div>
+      <div class="unit-card project-card" onclick="window.location.href='unitat_treball3.html'">
+        <div class="project-cover">
+          <img src="assets/portades/ldap.svg" alt="Imatge de la Unitat de Treball 3">
+        </div>
+        <div class="project-info">
+          <h2>Unitat de Treball 3</h2>
+          <p>Administració de sistemes operatius en xarxa.</p>
+        </div>
+      </div>
+      <div class="unit-card project-card" onclick="window.location.href='unitat_treball4.html'">
+        <div class="project-cover">
+          <img src="assets/portades/ldap.svg" alt="Imatge de la Unitat de Treball 4">
+        </div>
+        <div class="project-info">
+          <h2>Unitat de Treball 4</h2>
+          <p>Seguretat en sistemes operatius en xarxa.</p>
         </div>
       </div>
     </section>
